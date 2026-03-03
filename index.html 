@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计师作品集 | 平面设计 & 视频创作</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #1a1a1a; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* 导航栏 */
+        .navbar { background: white; padding: 1rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #4a6cf7; text-decoration: none; }
+        .logo span { color: #1a1a1a; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #666; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: #4a6cf7; }
+        
+        /* 英雄区域 */
+        .hero { padding: 8rem 0 4rem; background: linear-gradient(135deg, #f5f7ff 0%, #e3e9ff 100%); }
+        .hero-title { font-size: 3rem; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.5rem; color: #4a6cf7; margin-bottom: 1rem; }
+        .hero-description { font-size: 1.1rem; max-width: 500px; margin-bottom: 2rem; color: #666; }
+        
+        /* 按钮 */
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .btn-primary { background: #4a6cf7; color: white; }
+        .btn-primary:hover { background: #3a56d4; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(74,108,247,0.3); }
+        .btn-secondary { background: transparent; color: #4a6cf7; border: 2px solid #4a6cf7; }
+        .btn-secondary:hover { background: #4a6cf7; color: white; }
+        
+        /* 服务区域 */
+        .services { padding: 4rem 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 3rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
+        .service-icon { width: 60px; height: 60px; background: #4a6cf7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; }
+        
+        /* 作品展示 */
+        .featured-works { padding: 4rem 0; background: #f8f9fa; }
+        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .work-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .work-image { height: 200px; background: linear-gradient(135deg, #4a6cf7 0%, #3a56d4 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .work-info { padding: 1.5rem; }
+        
+        /* 页脚 */
+        .footer { background: #1a1a1a; color: white; padding: 3rem 0; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .footer-section h3 { margin-bottom: 1rem; }
+        .footer-section a { color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .footer-section a:hover { color: white; }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2rem; }
+            .services-grid, .works-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" class="logo">Design<span>Portfolio</span></a>
+            <div class="nav-links">
+                <a href="#home" class="active">首页</a>
+                <a href="#works">作品集</a>
+                <a href="#about">关于我</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="hero-title">创意视觉设计师</h1>
+            <p class="hero-subtitle">用设计讲述故事，用视频创造体验</p>
+            <p class="hero-description">
+                专注于平面设计和视频创作，结合美学与功能，为品牌创造独特的视觉语言。
+            </p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#works" class="btn btn-primary">查看作品</a>
+                <a href="#contact" class="btn btn-secondary">联系合作</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务区域 -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">专业服务</h2>
+            <p class="section-subtitle">提供全方位的视觉设计解决方案</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    <h3>平面设计</h3>
+                    <p>品牌标识、海报、UI设计、包装设计</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>视频创作</h3>
+                    <p>宣传视频、产品演示、动画制作</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>创意咨询</h3>
+                    <p>品牌策略、创意指导、设计系统</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section class="featured-works" id="works">
+        <div class="container">
+            <h2 class="section-title">精选作品</h2>
+            <p class="section-subtitle">近期最具代表性的创作</p>
+            
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="work-info">
+                        <h3>品牌视觉识别系统</h3>
+                        <p>为科技公司设计的完整品牌视觉系统</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="work-info">
+                        <h3>产品宣传视频</h3>
+                        <p>智能家居产品60秒宣传视频</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="work-info">
+                        <h3>金融App界面设计</h3>
+                        <p>投资理财应用UI/UX设计</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DesignPortfolio</h3>
+                    <p>专业的平面设计与视频创作工作室</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <a href="#home">首页</a>
+<a href="#works">作品集</a>
+                    <a href="#about">关于我</a>
+                    <a href="#contact">联系</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>联系信息</h4>
+                    <p>邮箱：hello@designportfolio.com</p>
+                    <p>电话：+86 138 0000 0000</p>
+                    <p>地址：中国，上海</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2026 DesignPortfolio. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的JavaScript功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 移动端菜单
+            const menuToggle = document.createElement('button');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            menuToggle.style.background = 'none';
+            menuToggle.style.border = 'none';
+            menuToggle.style.fontSize = '1.5rem';
+            menuToggle.style.cursor = 'pointer';
+            menuToggle.style.display = 'none';
+            
+            const navLinks = document.querySelector('.nav-links');
+            const navbarContainer = document.querySelector('.navbar .container');
+            
+            navbarContainer.appendChild(menuToggle);
+            
+            // 响应式菜单
+            function checkMobile() {
+                if (window.innerWidth <= 768) {
+                    menuToggle.style.display = 'block';
+                    navLinks.style.display = 'none';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'white';
+                    navLinks.style.padding = '1rem';
+                    navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                } else {
+                    menuToggle.style.display = 'none';
+                    navLinks.style.display = 'flex';
+                    navLinks.style.position = 'static';
+                    navLinks.style.background = 'transparent';
+                    navLinks.style.padding = '0';
+                    navLinks.style.boxShadow = 'none';
+                }
+            }
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            window.addEventListener('resize', checkMobile);
+            checkMobile();
+            
+            console.log('设计师作品集网站已加载');
+        });
+    </script>
+</body>
+</html>
