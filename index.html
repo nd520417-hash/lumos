@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alaia | 视觉设计师</title>
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Cargo Collective 风格 - 极简现代 */
+        /* Cargo Collective 现代简约风格 */
         :root {
             --black: #000000;
             --white: #ffffff;
-            --gray-light: #f5f5f5;
-            --gray: #888888;
-            --accent: #000000;
+            --gray-light: #f8f8f8;
+            --gray: #777777;
+            --gray-dark: #333333;
         }
         
         * {
@@ -36,13 +35,13 @@
             padding: 0 20px;
         }
         
-        /* 超简约导航 */
+        /* 简约导航 */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            padding: 30px 40px;
+            padding: 25px 40px;
             background: var(--white);
             z-index: 1000;
             display: flex;
@@ -52,7 +51,7 @@
         }
         
         .logo {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             letter-spacing: 1px;
             text-decoration: none;
@@ -61,13 +60,13 @@
         
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
         }
         
         .nav-links a {
             color: var(--black);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             letter-spacing: 0.5px;
             opacity: 0.7;
@@ -78,56 +77,55 @@
             opacity: 1;
         }
         
-        /* 英雄区域 - 全屏大图风格 */
+        /* 英雄区域 */
         .hero {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 100px;
-            background: var(--gray-light);
+            padding-top: 80px;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
             padding: 0 20px;
         }
         
         .hero-title {
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 300;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             line-height: 1.1;
             margin-bottom: 20px;
         }
         
         .hero-subtitle {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 300;
             color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 40px;
+            max-width: 500px;
+            margin: 0 auto 30px;
         }
         
-        /* 作品网格 - Cargo经典网格 */
+        /* 作品网格 */
         .works-section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
         
         .section-title {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             opacity: 0.5;
         }
         
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
         
         .work-item {
@@ -140,17 +138,17 @@
         .work-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            background: linear-gradient(45deg, #f0f0f0, #e8e8e8);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gray);
-            font-size: 48px;
+            font-size: 40px;
             transition: transform 0.5s ease;
         }
         
         .work-item:hover .work-image {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         .work-info {
@@ -158,56 +156,56 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 30px;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
             color: var(--white);
-            opacity: 0;
-            transition: opacity 0.3s;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
         
         .work-item:hover .work-info {
-            opacity: 1;
+            transform: translateY(0);
         }
         
         .work-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             margin-bottom: 5px;
         }
         
         .work-category {
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.7;
             letter-spacing: 1px;
         }
         
         /* 关于区域 */
         .about-section {
-            padding: 100px 0;
+            padding: 80px 0;
             background: var(--gray-light);
         }
         
         .about-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
         .about-text {
-            font-size: 20px;
-            line-height: 1.8;
-            margin-bottom: 40px;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
             font-weight: 300;
         }
         
         .about-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .detail-item h3 {
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -215,44 +213,45 @@
         }
         
         .detail-item p {
-            font-size: 16px;
+            font-size: 15px;
+            line-height: 1.6;
         }
         
         /* 联系区域 */
         .contact-section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
         
         .contact-content {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             text-align: center;
         }
         
         .contact-email {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--black);
             text-decoration: none;
             border-bottom: 1px solid var(--black);
-            padding-bottom: 5px;
+            padding-bottom: 3px;
             transition: opacity 0.3s;
         }
         
         .contact-email:hover {
-            opacity: 0.7;
+            opacity: 0.6;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .social-links a {
             color: var(--black);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 1px;
             opacity: 0.5;
             transition: opacity 0.3s;
@@ -264,10 +263,10 @@
         
         /* 页脚 */
         .footer {
-            padding: 60px 0;
+            padding: 50px 0;
             border-top: 1px solid rgba(0,0,0,0.05);
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gray);
         }
         
@@ -282,11 +281,11 @@
             }
             
             .hero-title {
-                font-size: 48px;
+                font-size: 42px;
             }
             
             .hero-subtitle {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .works-grid {
@@ -294,13 +293,13 @@
             }
             
             .about-text {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
         
         @media (max-width: 480px) {
             .hero-title {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .nav-links {
@@ -311,47 +310,48 @@
                 display: block;
                 background: none;
                 border: none;
-                font-size: 20px;
+                font-size: 18px;
                 cursor: pointer;
+                color: var(--black);
+                opacity: 0.7;
             }
         }
         
         /* 动画 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
         }
-        
-        .delay-1 { animation-delay: 0.2s; opacity: 0; }
-        .delay-2 { animation-delay: 0.4s; opacity: 0; }
-        .delay-3 { animation-delay: 0.6s; opacity: 0; }
     </style>
 </head>
 <body>
-    <!-- 简约导航 -->
+    <!-- 导航 -->
     <nav class="navbar">
-        <a href="#" class="logo">ALAIA</a>
+        <a href="#" class="logo">ALAIA DESIGN</a>
         <div class="nav-links">
             <a href="#works">作品</a>
             <a href="#about">关于</a>
             <a href="#contact">联系</a>
         </div>
-        <button class="mobile-menu-btn" style="display: none;">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button class="mobile-menu-btn" style="display: none;">≡</button>
     </nav>
 
-    <!-- 全屏英雄区域 -->
+    <!-- 英雄区域 -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title fade-in">视觉叙事者<br>与品牌塑造者</h1>
-            <p class="hero-subtitle fade-in delay-1">
-                专注于通过平面设计与动态影像，为品牌创造有影响力的视觉语言。
-                简洁、精准、富有情感。
+            <h1 class="hero-title animate">简约设计<br>深度叙事</h1>
+            <p class="hero-subtitle animate" style="animation-delay: 0.2s">
+                专注于品牌视觉识别与用户体验设计，通过简洁有力的视觉语言传递核心理念。
             </p>
         </div>
     </section>
@@ -359,45 +359,37 @@
     <!-- 作品网格 -->
     <section class="works-section" id="works">
         <div class="container">
-            <h2 class="section-title fade-in">精选作品</h2>
+            <h2 class="section-title animate">精选项目</h2>
             <div class="works-grid">
-                <div class="work-item fade-in">
-                    <div class="work-image">
-                        <i class="fas fa-pen-nib"></i>
-                    </div>
+                <div class="work-item animate">
+                    <div class="work-image">BRAND</div>
                     <div class="work-info">
-                        <h3 class="work-title">NovaTech品牌识别</h3>
-                        <p class="work-category">品牌设计 / 视觉系统</p>
+                        <h3 class="work-title">科技品牌重塑</h3>
+                        <p class="work-category">品牌识别 / 视觉系统</p>
                     </div>
                 </div>
                 
-                <div class="work-item fade-in delay-1">
-                    <div class="work-image">
-                        <i class="fas fa-film"></i>
-                    </div>
+                <div class="work-item animate" style="animation-delay: 0.1s">
+                    <div class="work-image">UI/UX</div>
                     <div class="work-info">
-                        <h3 class="work-title">智能家居宣传片</h3>
+                        <h3 class="work-title">金融应用设计</h3>
+                        <p class="work-category">界面设计 / 用户体验</p>
+                    </div>
+                </div>
+                
+                <div class="work-item animate" style="animation-delay: 0.2s">
+                    <div class="work-image">VIDEO</div>
+                    <div class="work-info">
+                        <h3 class="work-title">产品宣传影片</h3>
                         <p class="work-category">视频制作 / 动态图形</p>
                     </div>
                 </div>
                 
-                <div class="work-item fade-in delay-2">
-                    <div class="work-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+                <div class="work-item animate" style="animation-delay: 0.3s">
+                    <div class="work-image">PRINT</div>
                     <div class="work-info">
-                        <h3 class="work-title">金融应用界面</h3>
-                        <p class="work-category">UI/UX设计 / 交互</p>
-                    </div>
-                </div>
-                
-                <div class="work-item fade-in delay-3">
-                    <div class="work-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">艺术展览视觉</h3>
-                        <p class="work-category">平面设计 / 展览</p>
+                        <h3 class="work-title">艺术出版物设计</h3>
+                        <p class="work-category">平面设计 / 排版</p>
                     </div>
                 </div>
             </div>
@@ -408,30 +400,30 @@
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title fade-in">关于我</h2>
-                <p class="about-text fade-in">
-                    我是Alaia，一名专注于品牌视觉叙事的设计师。
-                    我相信好的设计不仅是美观的，更是有目的的——它传达理念、激发情感、推动行动。
+                <h2 class="section-title animate">设计理念</h2>
+                <p class="about-text animate">
+                    我相信优秀的设计是功能与美学的完美平衡。每个项目都始于深入的研究和理解，
+                    终于精准的执行和细节的打磨。
                 </p>
-                <p class="about-text fade-in delay-1">
-                    拥有8年从业经验，曾与科技初创公司、文化机构、时尚品牌合作，
-                    致力于通过简洁而有力的视觉语言，帮助品牌在嘈杂的市场中脱颖而出。
+                <p class="about-text animate" style="animation-delay: 0.1s">
+                    在数字时代，视觉叙事的力量比以往任何时候都更重要。
+                    我致力于创造不仅美观，更能有效沟通、引发共鸣的设计解决方案。
                 </p>
                 
                 <div class="about-details">
-                    <div class="detail-item fade-in">
-                        <h3>专长领域</h3>
-                        <p>品牌识别系统<br>UI/UX设计<br>动态影像制作<br>创意指导</p>
+                    <div class="detail-item animate">
+                        <h3>服务范围</h3>
+                        <p>品牌策略与识别<br>数字产品设计<br>视觉传达设计<br>创意指导</p>
                     </div>
                     
-                    <div class="detail-item fade-in delay-1">
-                        <h3>工作方式</h3>
-                        <p>深度研究<br>策略先行<br>精益执行<br>持续优化</p>
+                    <div class="detail-item animate" style="animation-delay: 0.1s">
+                        <h3>工作流程</h3>
+                        <p>需求分析<br>概念发展<br>设计执行<br>测试优化</p>
                     </div>
                     
-                    <div class="detail-item fade-in delay-2">
-                        <h3>荣誉</h3>
-                        <p>A'设计奖 2023<br>红点设计奖 2022<br>D&AD 入围 2021</p>
+                    <div class="detail-item animate" style="animation-delay: 0.2s">
+                        <h3>合作客户</h3>
+                        <p>科技初创公司<br>文化机构<br>时尚品牌<br>教育组织</p>
                     </div>
                 </div>
             </div>
@@ -442,20 +434,19 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title fade-in">开启对话</h2>
-                <p class="about-text fade-in" style="margin-bottom: 40px;">
-                    有兴趣合作或只是想聊聊设计？我很乐意听到你的想法。
+                <h2 class="section-title animate">联系合作</h2>
+                <p class="about-text animate" style="margin-bottom: 30px;">
+                    如果您有项目需要讨论，或想了解更多关于我的工作方式，请随时联系。
                 </p>
                 
-                <a href="mailto:hello@alaia.design" class="contact-email fade-in delay-1">
-                    hello@alaia.design
+                <a href="mailto:contact@alaia.design" class="contact-email animate" style="animation-delay: 0.1s">
+                    contact@alaia.design
                 </a>
                 
-                <div class="social-links fade-in delay-2">
-                    <a href="#">Instagram</a>
+                <div class="social-links animate" style="animation-delay: 0.2s">
                     <a href="#">Behance</a>
                     <a href="#">LinkedIn</a>
-                    <a href="#">Dribbble</a>
+                    <a href="#">Instagram</a>
                 </div>
             </div>
         </div>
@@ -464,15 +455,11 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Alaia Studio. 保留所有权利。</p>
-            <p style="margin-top: 10px; font-size: 11px; opacity: 0.5;">
-                基于Cargo Collective美学理念设计
-            </p>
+            <p>© 2024 Alaia Design Studio. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 简约的交互
         document.addEventListener('DOMContentLoaded', function() {
             // 平滑滚动
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -483,7 +470,7 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: targetElement.offsetTop - 60,
                             behavior: 'smooth'
                         });
                     }
@@ -496,10 +483,10 @@
             
             if (menuBtn && navLinks) {
                 menuBtn.addEventListener('click', function() {
-                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    const isVisible = navLinks.style.display === 'flex';
+                    navLinks.style.display = isVisible ? 'none' : 'flex';
                 });
                 
-                // 响应式检查
                 function checkMobile() {
                     if (window.innerWidth <= 480) {
                         menuBtn.style.display = 'block';
@@ -527,25 +514,20 @@
             }
             
             // 滚动动画
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
+                        entry.target.classList.add('animate');
                     }
                 });
-            }, observerOptions);
-            
-            // 观察所有需要动画的元素
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
             
-            console.log('Cargo风格作品集已加载');
+            document.querySelectorAll('.animate').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
