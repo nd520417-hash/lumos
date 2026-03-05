@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alaia | 视觉设计师</title>
+    <title>Alaia | 视觉叙事者</title>
     <style>
-        /* Cargo Collective 现代简约风格 */
+        /* 电影感摄影师风格 - 暗色主题 */
         :root {
-            --black: #000000;
+            --black: #0a0a0a;
+            --dark: #1a1a1a;
+            --gray: #333333;
+            --light: #f0f0f0;
             --white: #ffffff;
-            --gray-light: #f8f8f8;
-            --gray: #777777;
-            --gray-dark: #333333;
+            --accent: #ff6b6b;
         }
         
         * {
@@ -21,18 +22,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 300;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--light);
             line-height: 1.6;
-            color: var(--black);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            overflow-x: hidden;
         }
         
         /* 简约导航 */
@@ -41,34 +35,34 @@
             top: 0;
             left: 0;
             right: 0;
-            padding: 25px 40px;
-            background: var(--white);
-            z-index: 1000;
+            padding: 30px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
         }
         
         .logo {
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--white);
             text-decoration: none;
-            color: var(--black);
         }
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
         
         .nav-links a {
-            color: var(--black);
+            color: var(--light);
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
             opacity: 0.7;
             transition: opacity 0.3s;
         }
@@ -77,183 +71,212 @@
             opacity: 1;
         }
         
-        /* 英雄区域 */
+        /* 全屏英雄区域 */
         .hero {
-            height: 90vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=2000');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
         }
         
         .hero-content {
-            max-width: 700px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
             padding: 0 20px;
         }
         
         .hero-title {
-            font-size: 56px;
+            font-size: 72px;
             font-weight: 300;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
             line-height: 1.1;
             margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero-subtitle {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 300;
-            color: var(--gray);
-            max-width: 500px;
-            margin: 0 auto 30px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
         
-        /* 作品网格 */
+        /* 作品网格 - 电影感 */
         .works-section {
-            padding: 80px 0;
+            padding: 100px 40px;
         }
         
         .section-title {
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 2px;
+            font-size: 14px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             opacity: 0.5;
+            text-align: center;
         }
         
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .work-item {
             position: relative;
             overflow: hidden;
-            background: var(--gray-light);
-            aspect-ratio: 4/3;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            cursor: pointer;
         }
         
         .work-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #f0f0f0, #e8e8e8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 40px;
-            transition: transform 0.5s ease;
+            background: linear-gradient(45deg, #222, #444);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .work-item:hover .work-image {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         
-        .work-info {
+        .work-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            padding: 20px;
-            background: rgba(0,0,0,0.8);
-            color: var(--white);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         
-        .work-item:hover .work-info {
-            transform: translateY(0);
+        .work-item:hover .work-overlay {
+            opacity: 1;
         }
         
         .work-title {
-            font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 5px;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 10px;
         }
         
         .work-category {
-            font-size: 11px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             opacity: 0.7;
-            letter-spacing: 1px;
         }
         
         /* 关于区域 */
         .about-section {
-            padding: 80px 0;
-            background: var(--gray-light);
+            padding: 100px 40px;
+            background: var(--dark);
         }
         
         .about-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
         .about-text {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 30px;
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 40px;
             font-weight: 300;
+            opacity: 0.9;
         }
         
-        .about-details {
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
         
-        .detail-item h3 {
-            font-size: 11px;
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            font-size: 14px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            opacity: 0.5;
-        }
-        
-        .detail-item p {
-            font-size: 15px;
-            line-height: 1.6;
+            opacity: 0.7;
         }
         
         /* 联系区域 */
         .contact-section {
-            padding: 80px 0;
-        }
-        
-        .contact-content {
-            max-width: 500px;
-            margin: 0 auto;
+            padding: 100px 40px;
             text-align: center;
         }
         
+        .contact-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
         .contact-email {
-            font-size: 20px;
-            color: var(--black);
+            font-size: 24px;
+            color: var(--white);
             text-decoration: none;
-            border-bottom: 1px solid var(--black);
-            padding-bottom: 3px;
-            transition: opacity 0.3s;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 5px;
+            transition: color 0.3s;
         }
         
         .contact-email:hover {
-            opacity: 0.6;
+            color: var(--accent);
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
         }
         
         .social-links a {
-            color: var(--black);
+            color: var(--light);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: 1px;
-            opacity: 0.5;
+            opacity: 0.7;
             transition: opacity 0.3s;
         }
         
@@ -263,11 +286,11 @@
         
         /* 页脚 */
         .footer {
-            padding: 50px 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 60px 40px;
+            border-top: 1px solid var(--gray);
             text-align: center;
-            font-size: 11px;
-            color: var(--gray);
+            font-size: 12px;
+            opacity: 0.5;
         }
         
         /* 响应式 */
@@ -281,11 +304,17 @@
             }
             
             .hero-title {
-                font-size: 42px;
+                font-size: 48px;
             }
             
             .hero-subtitle {
-                font-size: 16px;
+                font-size: 18px;
+            }
+            
+            .works-section,
+            .about-section,
+            .contact-section {
+                padding: 60px 20px;
             }
             
             .works-grid {
@@ -293,13 +322,17 @@
             }
             
             .about-text {
-                font-size: 16px;
+                font-size: 18px;
+            }
+            
+            .contact-title {
+                font-size: 36px;
             }
         }
         
         @media (max-width: 480px) {
             .hero-title {
-                font-size: 32px;
+                font-size: 36px;
             }
             
             .nav-links {
@@ -310,18 +343,18 @@
                 display: block;
                 background: none;
                 border: none;
-                font-size: 18px;
+                color: var(--white);
+                font-size: 20px;
                 cursor: pointer;
-                color: var(--black);
                 opacity: 0.7;
             }
         }
         
         /* 动画 */
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -330,67 +363,67 @@
         }
         
         .animate {
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeIn 1s ease forwards;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- 导航 -->
     <nav class="navbar">
-        <a href="#" class="logo">ALAIA DESIGN</a>
+        <a href="#" class="logo">ALAIA</a>
         <div class="nav-links">
             <a href="#works">作品</a>
             <a href="#about">关于</a>
             <a href="#contact">联系</a>
         </div>
-        <button class="mobile-menu-btn" style="display: none;">≡</button>
+        <button class="mobile-menu-btn" style="display: none;">☰</button>
     </nav>
 
-    <!-- 英雄区域 -->
+    <!-- 全屏英雄 -->
     <section class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1 class="hero-title animate">简约设计<br>深度叙事</h1>
+            <h1 class="hero-title animate">视觉叙事<br>情感共鸣</h1>
             <p class="hero-subtitle animate" style="animation-delay: 0.2s">
-                专注于品牌视觉识别与用户体验设计，通过简洁有力的视觉语言传递核心理念。
+                通过设计讲述品牌故事，创造有深度的视觉体验。每个项目都是一次独特的叙事旅程。
             </p>
         </div>
     </section>
 
     <!-- 作品网格 -->
     <section class="works-section" id="works">
-        <div class="container">
-            <h2 class="section-title animate">精选项目</h2>
-            <div class="works-grid">
-                <div class="work-item animate">
-                    <div class="work-image">BRAND</div>
-                    <div class="work-info">
-                        <h3 class="work-title">科技品牌重塑</h3>
-                        <p class="work-category">品牌识别 / 视觉系统</p>
-                    </div>
+        <h2 class="section-title animate">精选项目</h2>
+        <div class="works-grid">
+            <div class="work-item animate">
+                <div class="work-image"></div>
+                <div class="work-overlay">
+                    <h3 class="work-title">Nova品牌重塑</h3>
+                    <p class="work-category">品牌识别 / 视觉系统</p>
                 </div>
-                
-                <div class="work-item animate" style="animation-delay: 0.1s">
-                    <div class="work-image">UI/UX</div>
-                    <div class="work-info">
-                        <h3 class="work-title">金融应用设计</h3>
-                        <p class="work-category">界面设计 / 用户体验</p>
-                    </div>
+            </div>
+            
+            <div class="work-item animate" style="animation-delay: 0.1s">
+                <div class="work-image"></div>
+                <div class="work-overlay">
+                    <h3 class="work-title">智能家居影片</h3>
+                    <p class="work-category">视频制作 / 动态图形</p>
                 </div>
-                
-                <div class="work-item animate" style="animation-delay: 0.2s">
-                    <div class="work-image">VIDEO</div>
-                    <div class="work-info">
-                        <h3 class="work-title">产品宣传影片</h3>
-                        <p class="work-category">视频制作 / 动态图形</p>
-                    </div>
+            </div>
+            
+            <div class="work-item animate" style="animation-delay: 0.2s">
+                <div class="work-image"></div>
+                <div class="work-overlay">
+                    <h3 class="work-title">金融应用界面</h3>
+                    <p class="work-category">UI/UX设计 / 交互</p>
                 </div>
-                
-                <div class="work-item animate" style="animation-delay: 0.3s">
-                    <div class="work-image">PRINT</div>
-                    <div class="work-info">
-                        <h3 class="work-title">艺术出版物设计</h3>
-                        <p class="work-category">平面设计 / 排版</p>
-                    </div>
+            </div>
+            
+            <div class="work-item animate" style="animation-delay: 0.3s">
+                <div class="work-image"></div>
+                <div class="work-overlay">
+                    <h3 class="work-title">艺术展览视觉</h3>
+                    <p class="work-category">平面设计 / 展览</p>
                 </div>
             </div>
         </div>
@@ -398,33 +431,36 @@
 
     <!-- 关于区域 -->
     <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2 class="section-title animate">设计理念</h2>
-                <p class="about-text animate">
-                    我相信优秀的设计是功能与美学的完美平衡。每个项目都始于深入的研究和理解，
-                    终于精准的执行和细节的打磨。
-                </p>
-                <p class="about-text animate" style="animation-delay: 0.1s">
-                    在数字时代，视觉叙事的力量比以往任何时候都更重要。
-                    我致力于创造不仅美观，更能有效沟通、引发共鸣的设计解决方案。
-                </p>
+        <div class="about-content">
+            <h2 class="section-title animate">设计哲学</h2>
+            <p class="about-text animate">
+                我相信优秀的设计是情感与功能的完美结合。每个像素、每种颜色、每个动画都应该服务于故事，
+                创造令人难忘的体验。
+            </p>
+            <p class="about-text animate" style="animation-delay: 0.1s">
+                在数字时代，视觉叙事的力量比以往任何时候都更强大。我致力于通过设计帮助品牌
+                在嘈杂的市场中脱颖而出，与观众建立深刻的情感连接。
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">完成项目</div>
+                </div>
                 
-                <div class="about-details">
-                    <div class="detail-item animate">
-                        <h3>服务范围</h3>
-                        <p>品牌策略与识别<br>数字产品设计<br>视觉传达设计<br>创意指导</p>
-                    </div>
-                    
-                    <div class="detail-item animate" style="animation-delay: 0.1s">
-                        <h3>工作流程</h3>
-                        <p>需求分析<br>概念发展<br>设计执行<br>测试优化</p>
-                    </div>
-                    
-                    <div class="detail-item animate" style="animation-delay: 0.2s">
-                        <h3>合作客户</h3>
-                        <p>科技初创公司<br>文化机构<br>时尚品牌<br>教育组织</p>
-                    </div>
+                <div class="stat-item animate" style="animation-delay: 0.1s">
+                    <div class="stat-number">8年</div>
+                    <div class="stat-label">设计经验</div>
+                </div>
+                
+                <div class="stat-item animate" style="animation-delay: 0.2s">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">客户满意度</div>
+                </div>
+                
+                <div class="stat-item animate" style="animation-delay: 0.3s">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">设计奖项</div>
                 </div>
             </div>
         </div>
@@ -432,30 +468,30 @@
 
     <!-- 联系区域 -->
     <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title animate">联系合作</h2>
-                <p class="about-text animate" style="margin-bottom: 30px;">
-                    如果您有项目需要讨论，或想了解更多关于我的工作方式，请随时联系。
-                </p>
-                
-                <a href="mailto:contact@alaia.design" class="contact-email animate" style="animation-delay: 0.1s">
-                    contact@alaia.design
-                </a>
-                
-                <div class="social-links animate" style="animation-delay: 0.2s">
-                    <a href="#">Behance</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
+        <h2 class="contact-title animate">开启创意对话</h2>
+        <p class="about-text animate" style="margin-bottom: 40px;">
+            如果您有项目需要讨论，或想了解更多关于我的工作方式，请随时联系。
+        </p>
+        
+        <a href="mailto:hello@alaia.design" class="contact-email animate" style="animation-delay: 0.1s">
+            hello@alaia.design
+        </a>
+        
+        <div class="social-links animate" style="animation-delay: 0.2s">
+            <a href="#">Behance</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Dribbble</a>
         </div>
     </section>
 
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Alaia Design Studio. All rights reserved.</p>
+            <p>© 2024 Alaia Design Studio. 保留所有权利。</p>
+            <p style="margin-top: 10px; font-size: 11px;">
+                灵感来自电影感视觉叙事
+            </p>
         </div>
     </footer>
 
@@ -470,7 +506,7 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 60,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }
@@ -496,16 +532,16 @@
                         navLinks.style.top = '100%';
                         navLinks.style.left = '0';
                         navLinks.style.right = '0';
-                        navLinks.style.background = 'var(--white)';
+                        navLinks.style.background = 'rgba(10,10,10,0.95)';
                         navLinks.style.padding = '20px';
-                        navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+                        navLinks.style.backdropFilter = 'blur(10px)';
                     } else {
                         menuBtn.style.display = 'none';
                         navLinks.style.display = 'flex';
                         navLinks.style.position = 'static';
                         navLinks.style.background = 'transparent';
                         navLinks.style.padding = '0';
-                        navLinks.style.boxShadow = 'none';
+                        navLinks.style.backdropFilter = 'none';
                     }
                 }
                 
